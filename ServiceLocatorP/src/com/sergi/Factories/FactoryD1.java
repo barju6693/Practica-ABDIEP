@@ -19,7 +19,7 @@ public class FactoryD1 implements Factory {
     @Override
     public InterfaceD create(ServiceLocator sl) throws LocatorError {
         try {
-            InterfaceD d = (InterfaceD) sl.getObject("D"); //CREC QUE NO ESTA BÉ; JA QUE AQUEST ES L'ULTIM NIVELL, NO DEPEN D'ALTRES INTERFICIES
+            //InterfaceD d = (InterfaceD) sl.getObject("D"); //CREC QUE NO ESTA BÉ; JA QUE AQUEST ES L'ULTIM NIVELL, NO DEPEN D'ALTRES INTERFICIES
             sl.setService("D", this);
             sl.setConstant("3", this);
             return new ImplementationD1(3);
