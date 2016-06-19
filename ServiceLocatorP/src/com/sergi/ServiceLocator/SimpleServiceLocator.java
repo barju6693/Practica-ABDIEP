@@ -18,19 +18,15 @@ public class SimpleServiceLocator implements ServiceLocator{
     static HashMap<String, Factory> mapF = new HashMap<String, Factory>();
 
     @Override
-    public void setService(String name, Factory factory) {
-        this.name = name;
-        this.value = factory;
-
-        mapF.put(name, factory);
+    public void setService(String name, Factory factory) throws LocatorError{
+        if(mapF.containsKey(name)) throw new LocatorError("Exist");
+        else mapF.put(name, factory);
     }
 
     @Override
-    public void setConstant(String name, Object value) {
-        this.name = name;
-        this.value = value;
-
-        map.put(name, value);
+    public void setConstant(String name, Object value) throws LocatorError{
+        if(map.containsKey(name)) throw new LocatorError("Exist");
+        else map.put(name, value);
     }
 
     @Override
@@ -48,6 +44,12 @@ public class SimpleServiceLocator implements ServiceLocator{
                     return new FactoryD1();
             }
         }
-        return map.get(name);
+        else if (map.containsKey(name)){
+            return map.get(name);
+        }
+        else{
+            throw new LocatorError("Not found");
+        }
+        return null;
     }
 }

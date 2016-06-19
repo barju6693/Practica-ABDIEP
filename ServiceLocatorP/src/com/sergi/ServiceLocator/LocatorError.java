@@ -15,8 +15,8 @@ public class LocatorError extends Exception{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    LocatorError() {
-        throw new UnsupportedOperationException("Not found"); //To change body of generated methods, choose Tools | Templates.
+    LocatorError(String msg) {
+        super(msg);
     }
     
 }

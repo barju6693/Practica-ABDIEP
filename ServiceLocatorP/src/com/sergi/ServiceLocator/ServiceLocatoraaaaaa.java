@@ -39,7 +39,7 @@ public class ServiceLocatoraaaaaa implements ServiceLocator{
         if (map.containsKey(name)) {
             return map.get(name);
         } else {
-            throw new LocatorError();
+            throw new LocatorError("msg");
         }
     }
 }

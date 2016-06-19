@@ -10,5 +10,8 @@ package com.sergi.ServiceLocator2;
  * @author F1_1_
  */
 public class LocatorError extends Exception{
+    LocatorError(String msg) {
+        super(msg);
+    }
     
 }

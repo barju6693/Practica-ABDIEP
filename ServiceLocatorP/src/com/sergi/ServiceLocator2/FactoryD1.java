@@ -15,9 +15,8 @@ public class FactoryD1<T> implements Factory<InterfaceD>{
 
     @Override
     public InterfaceD create(ServiceLocator sl) throws LocatorError {
-        int i = (int) sl.getObject("i");
-        sl.setConstant(klass, i);
-        return new ImplementationD1(i);
+    int i = (int) sl.getObject(Integer.class);
+    return new ImplementationD1(i);
     }
     
 }
