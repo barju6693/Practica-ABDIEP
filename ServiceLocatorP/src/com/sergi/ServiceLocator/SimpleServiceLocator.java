@@ -15,13 +15,14 @@ public class SimpleServiceLocator implements ServiceLocator{
     Object name = new String();
     Object value;
     static HashMap<String, Object> map = new HashMap<String, Object>();
+    static HashMap<String, Factory> mapF = new HashMap<String, Factory>();
 
     @Override
     public void setService(String name, Factory factory) {
         this.name = name;
         this.value = factory;
 
-        map.put(name, factory);
+        mapF.put(name, factory);
     }
 
     @Override
@@ -34,11 +35,19 @@ public class SimpleServiceLocator implements ServiceLocator{
 
     @Override
     public Object getObject(String name) throws LocatorError {
-        if (map.containsKey(name)) {
-            return new Factory
-            return map.get(name);
-        } else {
-            throw new LocatorError();
+        if (mapF.containsKey(name)) {
+            //Factory f = mapF.get(name);
+            switch (name) {
+                case "A":
+                    return new FactoryA1();
+                case "B":
+                    return new FactoryB1();
+                case "C":
+                    return new FactoryC1();
+                case "D":
+                    return new FactoryD1();
+            }
         }
+        return map.get(name);
     }
 }

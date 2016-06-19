@@ -17,7 +17,7 @@ import servicelocatorp.*;
 public class FactoryB1 implements Factory {
 
     @Override
-    public InterfaceB create(ServiceLocatoraaaaaa sl) throws LocatorError {
+    public InterfaceB create(ServiceLocator sl) throws LocatorError {
         try {
             InterfaceD d = (InterfaceD) sl.getObject("D");
             sl.setService("B", this);

@@ -11,8 +11,8 @@ import servicelocatorp.*;
  *
  * @author F1_1_
  */
-public class FactoryA1 implements Factory<InterfaceA>{
-    public InterfaceA create(ServiceLocator s) throws LocatorError {
+public class FactoryA1<T> implements Factory<InterfaceA>{
+    public InterfaceA create(ServiceLocator sl) throws LocatorError {
         InterfaceB b = sl.getObject(InterfaceB.class);
         InterfaceC c = sl.getObject(InterfaceC.class);
         return new ImplementationA1(b, c);

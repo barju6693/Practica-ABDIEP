@@ -9,6 +9,21 @@ package com.sergi.ServiceLocator2;
  *
  * @author F1_1_
  */
-public class SimpleServiceLocator {
+public class SimpleServiceLocator<T> implements ServiceLocator{
+
+    @Override
+    public <T> void setService(Class<T> klass, Factory<T> factory) throws LocatorError {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public <T> void setConstant(Class<T> klass, T value) throws LocatorError {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public <T> T getObject(Class<T> klass) throws LocatorError {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

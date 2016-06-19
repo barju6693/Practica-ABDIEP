@@ -11,7 +11,7 @@ import servicelocatorp.*;
  *
  * @author F1_1_
  */
-public class FactoryD1 implements Factory<InterfaceD>{
+public class FactoryD1<T> implements Factory<InterfaceD>{
 
     @Override
     public InterfaceD create(ServiceLocator sl) throws LocatorError {

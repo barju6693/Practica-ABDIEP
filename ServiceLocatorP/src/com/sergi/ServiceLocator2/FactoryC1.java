@@ -11,12 +11,12 @@ import servicelocatorp.*;
  *
  * @author F1_1_
  */
-public class FactoryC1 implements Factory<InterfaceC>{
+public class FactoryC1<T> implements Factory<InterfaceC>{
     @Override
     public InterfaceC create (ServiceLocator sl) throws LocatorError{
-        String c
+        String c = (String) sl.getObject(InterfaceC.class);
         
         //InterfaceD d = sl.getObject(InterfaceD.class);
-        return new ImplementationB1(d);
+        return new ImplementationC1(c);
     }
 }
