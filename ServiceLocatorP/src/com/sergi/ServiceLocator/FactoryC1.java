@@ -7,7 +7,7 @@ package com.sergi.ServiceLocator;
 
 import com.sergi.ServiceLocator.Factory;
 import com.sergi.ServiceLocator.LocatorError;
-import com.sergi.ServiceLocator.ServiceLocator;
+import com.sergi.ServiceLocator.ServiceLocatoraaaaaa;
 import servicelocatorp.*;
 
 /**
@@ -17,11 +17,11 @@ import servicelocatorp.*;
 public class FactoryC1 implements Factory {
 
     @Override
-    public InterfaceC create(ServiceLocator sl) throws LocatorError {
+    public InterfaceC create(ServiceLocatoraaaaaa sl) throws LocatorError {
         try {
-            sl.setService("C", this);
-            sl.setConstant("Hola", this);
-            return new ImplementationC1(new String("HOLA"));
+            String c = (String) sl.getObject("C");
+            //sl.setConstant("C", c);
+            return new ImplementationC1(c);
         } catch (ClassCastException ex) {
             throw new LocatorError(ex);
         }

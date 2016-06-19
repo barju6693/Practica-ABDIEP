@@ -7,7 +7,7 @@ package com.sergi.ServiceLocator;
 
 import com.sergi.ServiceLocator.Factory;
 import com.sergi.ServiceLocator.LocatorError;
-import com.sergi.ServiceLocator.ServiceLocator;
+import com.sergi.ServiceLocator.ServiceLocatoraaaaaa;
 import servicelocatorp.*;
 
 /**
@@ -17,7 +17,7 @@ import servicelocatorp.*;
 public class FactoryA1 implements Factory {
 
     @Override
-    public InterfaceA create(ServiceLocator sl) throws LocatorError {
+    public InterfaceA create(ServiceLocatoraaaaaa sl) throws LocatorError {
         try {
             InterfaceB b = (InterfaceB) sl.getObject("B");
             InterfaceC c = (InterfaceC) sl.getObject("C");
