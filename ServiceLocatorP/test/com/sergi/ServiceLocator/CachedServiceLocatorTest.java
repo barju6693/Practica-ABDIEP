@@ -13,7 +13,7 @@ import servicelocatorp.*;
 
 /**
  *
- * @author F1_1_
+ * @author Sergi Cervera
  */
 public class CachedServiceLocatorTest {
     
@@ -28,8 +28,8 @@ public class CachedServiceLocatorTest {
             sl.setService("B",new FactoryB1());
             sl.setService("C",new FactoryC1());
             sl.setService("D",new FactoryD1());
-            sl.setConstant("i", 10);
-            sl.setConstant("S","string");
+            sl.setConstant("int", 66);
+            sl.setConstant("str","string");
         }catch(Exception e){
             fail("Exception in setUp!");
         }
@@ -38,11 +38,20 @@ public class CachedServiceLocatorTest {
     @After
     public void tearDown() {
     }
-
+    
+        @Test
+    public void testServiceInstance() throws Exception{
+        System.out.println("serviceInstance");
+        assertTrue(sl.getObject("B") instanceof ImplementationB1);
+    }
+    
     @Test
-    public void testSetServiceConstant() throws Exception {
-        System.out.println("setServiceConstant");
-        assertTrue(sl.getObject("D") instanceof ImplementationD1);
+    public void testSetConstantString() throws Exception {
+        System.out.println("setConstantString");
+        String name = "str2";
+        Object value = "string2";
+        sl.setConstant(name, value);
+        assertEquals(value, sl.getObject("str2"));
     }
     
     @Test
@@ -53,28 +62,21 @@ public class CachedServiceLocatorTest {
         assertNotEquals(sl.getObject("Hello"),B1);     
     }
 
-    @Test
-    public void testSetConstant() throws Exception {
-        System.out.println("setConstant");
-        String name = "V";
-        Object value = "valor";
-        sl.setConstant(name, value);
-        assertEquals(value, sl.getObject("V"));
-    }
+    
 
     @Test
     public void testGetObject() throws Exception {
         System.out.println("getObject");
         String name = "i";
-        Object expResult = 10;
-        Object result = sl.getObject(name);
-        assertEquals(expResult, result);
+        Object comp = 66;
+        Object value = sl.getObject(name);
+        assertEquals(comp, value);
     }
     
     @Test
-    public void testGetObjectI() throws Exception{
-        System.out.println("getObjectI");
-        String name = "i";
+    public void testGetObjectInstance() throws Exception{
+        System.out.println("getObjectInstance");
+        String name = "int";
         Object result = sl.getObject(name);
         assertTrue(result instanceof Integer);
         

@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author F1_1_
+ * @author Sergi Cervera
  */
 public class SimpleServiceLocator<T> implements ServiceLocator{
 

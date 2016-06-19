@@ -9,7 +9,7 @@ import servicelocatorp.*;
 
 /**
  *
- * @author F1_1_
+ * @author Sergi Cervera
  */
 public class FactoryB1<T> implements Factory<InterfaceB>{
     @Override

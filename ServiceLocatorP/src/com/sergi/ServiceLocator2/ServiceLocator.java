@@ -7,7 +7,7 @@ package com.sergi.ServiceLocator2;
 
 /**
  *
- * @author F1_1_
+ * @author Sergi Cervera
  */
 public interface ServiceLocator {
     <T> void setService(Class<T> klass, Factory<T> factory) throws LocatorError;

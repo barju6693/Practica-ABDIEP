@@ -7,7 +7,6 @@ package com.sergi.ServiceLocator;
 
 import com.sergi.ServiceLocator.Factory;
 import com.sergi.ServiceLocator.LocatorError;
-import com.sergi.ServiceLocator.ServiceLocatoraaaaaa;
 import servicelocatorp.*;
 
 /**
@@ -20,7 +19,6 @@ public class FactoryD1 implements Factory {
     public InterfaceD create(ServiceLocator sl) throws LocatorError {
         try {
             int d = (int)sl.getObject("D");
-            //sl.setConstant("D", d);
             return new ImplementationD1(d);
         } catch (ClassCastException ex) {
             throw new LocatorError(ex);

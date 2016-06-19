@@ -9,7 +9,7 @@ import servicelocatorp.*;
 
 /**
  *
- * @author F1_1_
+ * @author Sergi Cervera
  */
 public class FactoryA1<T> implements Factory<InterfaceA>{
     public InterfaceA create(ServiceLocator sl) throws LocatorError {

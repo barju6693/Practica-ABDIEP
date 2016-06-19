@@ -7,7 +7,7 @@ package com.sergi.ServiceLocator2;
 
 /**
  *
- * @author F1_1_
+ * @author Sergi Cervera
  */
 public class LocatorError extends Exception{
     LocatorError(String msg) {

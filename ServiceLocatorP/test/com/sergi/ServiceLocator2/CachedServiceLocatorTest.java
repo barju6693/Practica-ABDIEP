@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author F1_1_
+ * @author Sergi Cervera
  */
 public class CachedServiceLocatorTest {
     
