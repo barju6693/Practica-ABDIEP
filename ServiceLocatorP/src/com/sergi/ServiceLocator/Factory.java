@@ -10,5 +10,5 @@ package com.sergi.ServiceLocator;
  * @author Sergi Cervera
  */
 public interface Factory {
-    Object	create(ServiceLocatoraaaaaa sl) throws LocatorError;
+    Object create(ServiceLocator sl) throws LocatorError;
 }
