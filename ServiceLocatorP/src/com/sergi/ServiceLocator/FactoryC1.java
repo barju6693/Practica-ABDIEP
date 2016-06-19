@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sergi.Factories;
+package com.sergi.ServiceLocator;
 
 import com.sergi.ServiceLocator.Factory;
 import com.sergi.ServiceLocator.LocatorError;
@@ -14,15 +14,14 @@ import servicelocatorp.*;
  *
  * @author Sergi Cervera
  */
-public class FactoryD1 implements Factory {
+public class FactoryC1 implements Factory {
 
     @Override
-    public InterfaceD create(ServiceLocator sl) throws LocatorError {
+    public InterfaceC create(ServiceLocator sl) throws LocatorError {
         try {
-            //InterfaceD d = (InterfaceD) sl.getObject("D"); //CREC QUE NO ESTA BÉ; JA QUE AQUEST ES L'ULTIM NIVELL, NO DEPEN D'ALTRES INTERFICIES
-            sl.setService("D", this);
-            sl.setConstant("3", this);
-            return new ImplementationD1(3);
+            sl.setService("C", this);
+            sl.setConstant("Hola", this);
+            return new ImplementationC1(new String("HOLA"));
         } catch (ClassCastException ex) {
             throw new LocatorError(ex);
         }
